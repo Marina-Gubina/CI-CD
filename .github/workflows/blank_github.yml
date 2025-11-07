@@ -33,5 +33,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-          postman login --with-api-key PMAK-690e3488a7a1d90001137031-d5e09dd124eb6daaf368609712e7349031
+          postman login --with-api-key ${{secrets.API_KEY}}
           postman collection run "postman/collections/Santa-secret-ci.json" -e "santa_env.postman_environment.json"
